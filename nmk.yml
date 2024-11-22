@@ -1,0 +1,25 @@
+refs:
+  # Plugins references
+  - pip://nmk-badges!plugin.yml
+  - pip://nmk-github!plugin.yml
+  - pip://nmk-python!plugin.yml
+  - pip://nmk-vscode!plugin.yml
+  - pip://nmk-doc!plugin.yml
+  - <workspace>/shared.yml
+  - workspace:
+      local: ../../shared
+      remote: github://dynod/workspace/main/shared
+
+config:
+  # Dependencies
+  pythonPackageRequirements:
+    - nmk-base>=0.26.0
+
+  # Extra project data
+  pythonProjectFileItems:
+    project:
+      description: Rust plugin for nmk build system
+
+  # Github issues logged in nmk project
+  githubIssuesRepo: nmk
+  githubIssuesLabel: "plugin:rust"
