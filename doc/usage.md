@@ -6,6 +6,11 @@ refs:
     - pip://nmk-rust!plugin.yml
 ```
 
+```{note}
+Note that **`cargo`** command is expected to be installed on the system to use this plugin.\
+See [Install instructions](https://www.rust-lang.org/tools/install) for more information
+```
+
 Then you can start adding rust source files in your project **src** sub-folder.\
 Once done, **`nmk`** build will:
 * ...

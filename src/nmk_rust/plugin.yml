@@ -14,3 +14,9 @@ config:
     # Plugin help links dict
     nmkPluginsDocs:
         nmk-rust: https://nmk-rust.readthedocs.io/
+
+    # Needs cargo on the path
+    systemDeps:
+      cargo:
+        apt: ["cargo"]
+        url: https://www.rust-lang.org/tools/install
