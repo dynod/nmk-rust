@@ -20,3 +20,7 @@ config:
       cargo:
         apt: ["cargo"]
         url: https://www.rust-lang.org/tools/install
+
+    # Contribution to VSCode extensions
+    vscodeExtensionsNames:
+        - rust-lang.rust-analyzer
