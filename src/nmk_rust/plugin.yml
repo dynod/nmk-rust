@@ -1,6 +1,7 @@
 # Rust plugin definitions
 refs:
   - pip://nmk-base!plugin.yml
+  - files.yml   # Folders and files
 
 config:
     # Plugin version

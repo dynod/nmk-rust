@@ -7,6 +7,7 @@ This plugin adds support for [Rust](https://www.rust-lang.org/) development in a
 :caption: 'Contents'
 :maxdepth: 2
 usage
+config
 contribs
 ```
 
