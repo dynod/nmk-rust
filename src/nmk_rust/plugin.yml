@@ -2,6 +2,7 @@
 refs:
   - pip://nmk-base!plugin.yml
   - files.yml   # Folders and files
+  - cargo.yml   # Cargo files generation
 
 config:
     # Plugin version
