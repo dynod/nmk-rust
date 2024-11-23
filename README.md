@@ -14,7 +14,7 @@ Rust plugin for nmk build system
 <!-- NMK-BADGES-END -->
 
 This plugin adds support for [Rust](https://www.rust-lang.org/) development in an **`nmk`** project:
-* ...
+* VSCode settings generation (if [**`nmk-vscode`**](https://github.com/dynod/nmk-vscode) plugin is also used)
 
 ## Usage
 
