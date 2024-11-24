@@ -12,7 +12,8 @@ As other plugins, **`nmk-rust`** registers its version and documentation link in
 
 ## VSCode extensions
 
-**`nmk-rust`** plugin [recommends](https://nmk-vscode.readthedocs.io/en/stable/extend.html#extensions) usage of the 
-[rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) extension for generic rust support in VSCode.
+**`nmk-rust`** plugin [recommends](https://nmk-vscode.readthedocs.io/en/stable/extend.html#extensions) usage of following VSCode extensions: 
+* [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) for generic rust support
+* [Even Better TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml) for toml support
 
 > **Note:** enabled only if [**`nmk-vscode`** plugin](https://nmk-vscode.readthedocs.io/) is used in the nmk project

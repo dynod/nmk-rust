@@ -5,24 +5,25 @@ refs:
   - cargo.yml   # Cargo files generation
 
 config:
-    # Plugin version
-    nmkRustPluginVersion:
-        __resolver__: nmk_rust.NmkRustVersionResolver
+  # Plugin version
+  nmkRustPluginVersion:
+    __resolver__: nmk_rust.NmkRustVersionResolver
 
-    # Plugin versions dict
-    nmkPluginsVersions:
-        nmk-rust: ${nmkRustPluginVersion}
+  # Plugin versions dict
+  nmkPluginsVersions:
+    nmk-rust: ${nmkRustPluginVersion}
 
-    # Plugin help links dict
-    nmkPluginsDocs:
-        nmk-rust: https://nmk-rust.readthedocs.io/
+  # Plugin help links dict
+  nmkPluginsDocs:
+    nmk-rust: https://nmk-rust.readthedocs.io/
 
-    # Needs cargo on the path
-    systemDeps:
-      cargo:
-        apt: ["cargo"]
-        url: https://www.rust-lang.org/tools/install
+  # Needs cargo on the path
+  systemDeps:
+    cargo:
+    apt: ["cargo"]
+    url: https://www.rust-lang.org/tools/install
 
-    # Contribution to VSCode extensions
-    vscodeExtensionsNames:
-        - rust-lang.rust-analyzer
+  # Contribution to VSCode extensions
+  vscodeExtensionsNames:
+    - rust-lang.rust-analyzer
+    - tamasfe.even-better-toml
