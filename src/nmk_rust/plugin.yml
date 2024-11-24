@@ -3,6 +3,7 @@ refs:
   - pip://nmk-base!plugin.yml
   - files.yml   # Folders and files
   - cargo.yml   # Cargo files generation
+  - format.yml  # Code format handling
 
 config:
   # Plugin version
@@ -20,8 +21,8 @@ config:
   # Needs cargo on the path
   systemDeps:
     cargo:
-    apt: ["cargo"]
-    url: https://www.rust-lang.org/tools/install
+      apt: ["cargo"]
+      url: https://www.rust-lang.org/tools/install
 
   # Contribution to VSCode extensions
   vscodeExtensionsNames:

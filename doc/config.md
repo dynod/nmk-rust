@@ -87,7 +87,7 @@ This is the [rust edition](https://doc.rust-lang.org/edition-guide/) to insert w
 
 | Type | Default value |
 |-     |-
-| list[str]  | ["${PROJECTDIR}/templates/config.toml.jinja"]
+| list[str]  | ["<nmk_rust>/templates/config.toml.jinja"]
 
 This is a list of config fragment files to be merged in generated **{ref}`${rustConfigFile}<rustConfigFile>`** file.
 
@@ -105,7 +105,7 @@ This is a dictionary of items to be contributed in generated **{ref}`${rustConfi
 
 | Type | Default value |
 |-     |-
-| list[str]  | ["${PROJECTDIR}/templates/manifest.toml.jinja"]
+| list[str]  | ["<nmk_rust>/templates/manifest.toml.jinja"]
 
 This is a list of manifest fragment files to be merged in generated **{ref}`${rustManifestFile}<rustManifestFile>`** file.
 
@@ -117,3 +117,59 @@ This is a list of manifest fragment files to be merged in generated **{ref}`${ru
 | Dict | {}
 
 This is a dictionary of items to be contributed in generated **{ref}`${rustManifestFile}<rustManifestFile>`** file.
+
+## Code format
+
+(rustFormatFile)=
+### **`rustFormatFile`** -- rustfmt configuration file
+
+| Type | Default value |
+|-     |-
+| str  | "${PROJECTDIR}/.rustfmt.toml"
+
+This is the **`rustfmt`** [configuration file](https://rust-lang.github.io/rustfmt/) for the project.
+
+(rustFormatFileFragments)=
+### **`rustFormatFileFragments`** -- Cargo manifest file fragments
+
+| Type | Default value |
+|-     |-
+| list[str]  | ["<nmk_rust>/templates/rustfmt.toml.jinja"]
+
+This is a list of manifest fragment files to be merged in generated **{ref}`${rustFormatFile}<rustFormatFile>`** file.
+
+(rustFormatFileItems)=
+### **`rustFormatFileItems`** -- Cargo manifest file contributed items
+
+| Type | Default value |
+|-     |-
+| Dict | {}
+
+This is a dictionary of items to be contributed in generated **{ref}`${rustFormatFile}<rustFormatFile>`** file.
+
+(rustLineLength)=
+### **`rustLineLength`** -- Rust code line length
+
+| Type | Default value |
+|-     |-
+| int | 160
+
+This is the configured width for rust source code lines, when formatting code.
+
+(rustFormatStampFile)=
+### **`rustFormatStampFile`** -- Code format stamp file
+
+| Type | Default value |
+|-     |-
+| str | [${outputDir}](https://nmk-base.readthedocs.io/en/stable/config.html#outputdir-output-base-directory)/.rustfmt
+
+Stamp file updated each time code format task is executed (for incremental build).
+
+(rustFormatExtraArgs)=
+### **`rustFormatExtraArgs`** -- `cargo fmt` extra command line args
+
+| Type | Default value |
+|-     |-
+| list[str] | ["-v"]
+
+List of **`cargo fmt`** command extra arguments when formatting code.

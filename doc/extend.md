@@ -19,3 +19,12 @@ The rust package handled by an **`nmk-rust`** project can be configured using th
 
 * **{ref}`${rustPackage}<rustPackage>`**: rust package name
 * **{ref}`${rustEdition}<rustEdition>`**: rust edition to be used in generated manifest file
+
+## Code format
+
+To fine-tune code format of rust source files, an **`nmk-rust`** project can be configured using the following items:
+
+* **{ref}`${rustLineLength}<rustLineLength>`**: rust code line length
+* **{ref}`${rustFormatFileFragments}<rustFormatFileFragments>`**: additional rustfmt config file fragments
+* **{ref}`${rustFormatFileItems}<rustFormatFileItems>`**: additional rustfmt config items
+* **{ref}`${rustFormatExtraArgs}<rustFormatExtraArgs>`**: extra arguments for **`cargo fmt`** command
