@@ -13,6 +13,12 @@ config:
   # Cargo manifest file items contributions
   rustManifestFileItems: {}
 
+  # Rust edition to be maintained in generated manifest file
+  rustEdition: 2021
+
+  # Rust package name
+  rustPackage: ${projectName}
+
 tasks:
   rust.config.dir:
     description: Create cargo config folder

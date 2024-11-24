@@ -12,3 +12,10 @@ Following config items may be extended for that purpose:
 * **{ref}`${rustConfigFileItems}<rustConfigFileItems>`**: additional cargo configuration items
 * **{ref}`${rustManifestFileFragments}<rustManifestFileFragments>`**: additional cargo manifest file fragments
 * **{ref}`${rustManifestFileItems}<rustManifestFileItems>`**: additional cargo manifest items
+
+## Rust package
+
+The rust package handled by an **`nmk-rust`** project can be configured using the following items:
+
+* **{ref}`${rustPackage}<rustPackage>`**: rust package name
+* **{ref}`${rustEdition}<rustEdition>`**: rust edition to be used in generated manifest file
