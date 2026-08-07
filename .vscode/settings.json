@@ -7,12 +7,10 @@
         "editor.defaultFormatter": "charliermarsh.ruff",
         "editor.formatOnSave": true
     },
-    "python.defaultInterpreterPath": "venv/bin/python",
     "python.autoComplete.extraPaths": [
         "src"
     ],
     "cSpell.words": [
-        "isort",
         "noqa",
         "pycache",
         "pylint",
@@ -21,44 +19,49 @@
         "sdist",
         "venv",
         "pyproject",
+        "pyright",
         "rtype",
         "dynod",
         "nmk",
         "pypi",
         "buildenv"
     ],
-    "python.analysis.extraPaths": [
-        "src"
-    ],
     "python.testing.pytestEnabled": true,
     "files.watcherExclude": {
-        "**/venv/**": true
+        "**/.venv/**": true
     },
     "editor.formatOnSave": true,
+    "[yaml]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "task.allowAutomaticTasks": "on",
     "terminal.integrated.defaultProfile.windows": "Git Bash",
     "terminal.integrated.profiles.linux": {
         "bash": {
             "args": [
-                "--init-file",
-                ".buildenv/shell.sh"
+                "./buildenv.sh",
+                "shell"
             ]
         }
     },
     "terminal.integrated.profiles.windows": {
         "Git Bash": {
             "args": [
-                "--init-file",
-                ".buildenv/shell.sh"
+                "./buildenv.sh",
+                "shell"
             ]
         },
         "Command Prompt": {
             "args": [
-                "/k",
-                ".buildenv\\shell.cmd"
+                "/c",
+                "buildenv.cmd",
+                "shell",
+                "--shell",
+                "cmd"
             ]
         }
     },
+    "python.terminal.activateEnvironment": false,
     "cSpell.allowCompoundWords": true,
     "cSpell.enableFiletypes": [
         "yaml",

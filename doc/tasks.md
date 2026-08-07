@@ -2,10 +2,13 @@
 
 The **`nmk-rust`** plugin defines the tasks described below.
 
+---
+
 ## Setup tasks
 
 All tasks in this chapter are dependencies of the base [**`setup`**](https://nmk-base.readthedocs.io/en/stable/tasks.html#setup-task) task.
 
+---
 (rust.config)=
 ### **`rust.config`** -- Cargo config file generation
 
@@ -26,6 +29,7 @@ The builder is called with the following parameters mapping:
 | items | **{ref}`${rustConfigFileItems}<rustConfigFileItems>`**
 | plugin_name | "nmk-rust"
 
+---
 (rust.manifest)=
 ### **`rust.manifest`** -- Cargo manifest file generation
 
@@ -46,6 +50,7 @@ The builder is called with the following parameters mapping:
 | items | **{ref}`${rustManifestFileItems}<rustManifestFileItems>`**
 | plugin_name | "nmk-rust"
 
+---
 (rust.fmtcfg)=
 ### **`rust.fmtcfg`** -- rustfmt config file generation
 
@@ -66,10 +71,12 @@ The builder is called with the following parameters mapping:
 | items | **{ref}`${rustFormatFileItems}<rustFormatFileItems>`**
 | plugin_name | "nmk-rust"
 
+---
 ## Build tasks
 
 All tasks in this chapter are dependencies of the base [**`build`**](https://nmk-base.readthedocs.io/en/stable/tasks.html#build-task) task.
 
+---
 (rust.format)=
 ### **`rust.format`** -- Format rust code files
 
