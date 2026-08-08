@@ -86,7 +86,7 @@ This is the rust package name to insert when generating **{ref}`${rustManifestFi
 
 | Type | Default value |
 |-     |-
-| int | 2021
+| int | 2024
 
 This is the [rust edition](https://doc.rust-lang.org/edition-guide/) to insert when generating **{ref}`${rustManifestFile}<rustManifestFile>`** manifest file.
 
