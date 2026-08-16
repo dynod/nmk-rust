@@ -19,6 +19,15 @@ config:
   # Rust package name
   rustPackage: ${projectName}
 
+  # Rust fetch stamp file
+  rustFetchStampFile: ${outputDir}/.rustfetch
+
+  # Extra args for cargo fetch command
+  rustFetchExtraArgs: []
+
+  # Package dependencies
+  rustDependencies: {}
+
 tasks:
   rust.config.dir:
     description: Create cargo config folder
@@ -58,3 +67,25 @@ tasks:
       fragment_files: ${rustManifestFileFragments}
       items: ${rustManifestFileItems}
       plugin_name: nmk-rust
+
+  rust.fetch:
+    description: Fetch cargo dependencies
+    emoji: ":crab:.:inbox_tray:"
+    input:
+      - ${rustManifestFile}
+      - ${rustConfigFile}
+    output:
+      - ${rustFetchStampFile}
+    appendToDeps: setup
+    deps:
+      - rust.manifest
+      - rust.config
+      - out
+    if: ${rustSrcFiles} # Only if rust source files are found
+    builder: nmk_base.common.ProcessBuilder
+    params:
+      cmd:
+        - cargo
+        - fetch
+        - ${rustFetchExtraArgs}
+      verbose: true

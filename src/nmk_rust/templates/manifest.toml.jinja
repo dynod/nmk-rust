@@ -2,3 +2,7 @@
 name = "{{ rustPackage }}"
 edition = "{{ rustEdition }}"
 authors = ["{{ projectAuthor }}"]
+
+{% if rustDependencies %}[dependencies]{% for dep_name in rustDependencies|sort %}
+{{dep_name}} = "{{ rustDependencies[dep_name] }}"{% endfor %}{% endif %}
+

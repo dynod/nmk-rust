@@ -1,2 +1,6 @@
 refs:
-    - pip://nmk-rust!plugin.yml
+  - pip://nmk-rust!plugin.yml
+
+config:
+  rustDependencies:
+    foo: 1.0.0

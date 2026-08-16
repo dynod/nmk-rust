@@ -13,6 +13,7 @@ partition "setup" {
     :🦀.🧰      rust.config;
     :🦀.📋      rust.manifest;
     :🦀.💼      rust.fmtcfg;
+    :🦀.📥      rust.fetch;
 }
 
 partition "build (build.preprocess)" {
