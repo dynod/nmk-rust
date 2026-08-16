@@ -83,6 +83,28 @@ The builder is called with the following parameters mapping:
 
 ---
 
+(rust.fetch)=
+
+### 🦀.📥 **`rust.fetch`** -- Fetch cargo dependencies
+
+This task calls the **`cargo fetch`** command to download and build dependencies of the current package.
+
+| Property | Value/description                                                                                                                             |
+| -------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| builder  | [nmk_base.common.ProcessBuilder](https://nmk-base.readthedocs.io/en/stable/autoapi/nmk_base/common/index.html#nmk_base.common.ProcessBuilder) |
+| input    | {ref}`${rustManifestFile}<rustManifestFile>` and {ref}`${rustConfigFile}<rustConfigFile>` files                                               |
+| output   | {ref}`${rustFetchStampFile}<rustFetchStampFile>` file                                                                                         |
+| if       | {ref}`${rustSrcFiles}<rustSrcFiles>` are found                                                                                                |
+
+The builder is called with the following parameters mapping:
+
+| Name    | Value                                                                    |
+| ------- | ------------------------------------------------------------------------ |
+| cmd     | ["cargo", "fetch", **{ref}`${rustFetchExtraArgs}<rustFetchExtraArgs>`**] |
+| verbose | true                                                                     |
+
+---
+
 ## Preprocessing build tasks
 
 All tasks in this chapter are dependencies of the base [**`build.preprocess`**](https://nmk-base.readthedocs.io/en/stable/tasks.html#build-preprocess-task) task.
