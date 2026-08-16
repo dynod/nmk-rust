@@ -1,0 +1,22 @@
+@startuml task-definition
+
+<style>
+element {MinimumWidth 180}
+activityDiagram {
+    FontSize 15
+}
+</style>
+
+note: all tasks are executed\nonly if rust source files are found
+
+partition "setup" {
+    :🦀.🧰      rust.config;
+    :🦀.📋      rust.manifest;
+    :🦀.💼      rust.fmtcfg;
+}
+
+partition "build (build.preprocess)" {
+    :🦀.💄      rust.format;
+}
+
+@enduml

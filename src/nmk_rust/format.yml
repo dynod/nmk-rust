@@ -28,7 +28,7 @@ tasks:
     output:
       - ${rustFormatFile}
     appendToDeps: setup
-    if: ${rustSrcFiles}   # Only if rust source files are found
+    if: ${rustSrcFiles} # Only if rust source files are found
     builder: nmk_base.common.TomlFileBuilder
     params:
       fragment_files: ${rustFormatFileFragments}
@@ -44,11 +44,11 @@ tasks:
       - ${rustSrcFiles}
     output:
       - ${rustFormatStampFile}
-    appendToDeps: build
+    appendToDeps: build.preprocess
     deps:
       - out
       - rust.fmtcfg
-    if: ${rustSrcFiles}   # Only if rust source files are found
+    if: ${rustSrcFiles} # Only if rust source files are found
     builder: nmk_base.common.ProcessBuilder
     params:
       cmd:
