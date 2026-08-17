@@ -19,6 +19,9 @@ config:
   pythonProjectFileItems:
     project:
       description: Rust plugin for nmk build system
+      entry-points:
+        buildenv_template: # buildenv >=2 template
+          nmk.rust: nmk_rust._buildenv.template:NmkRustProjectTemplate
 
   # Github issues logged in nmk project
   githubIssuesRepo: nmk

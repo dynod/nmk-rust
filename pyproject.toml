@@ -40,6 +40,9 @@ Homepage = "https://github.com/dynod/nmk-rust"
 Repository = "https://github.com/dynod/nmk-rust"
 Issues = "https://github.com/dynod/nmk/issues?q=is%3Aopen+is%3Aissue+label%3Aplugin%3Arust"
 
+[project.entry-points.buildenv_template]
+"nmk.rust" = "nmk_rust._buildenv.template:NmkRustProjectTemplate"
+
 [dependency-groups]
 dev = [
     "nmk-badges",
