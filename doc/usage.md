@@ -1,9 +1,10 @@
 # Usage
 
 To use this plugin in your **`nmk`** project, insert this reference in your **nmk.yml** main file:
+
 ```yaml
 refs:
-    - pip://nmk-rust!plugin.yml
+  - pip://nmk-rust!plugin.yml
 ```
 
 ```{note}
@@ -13,7 +14,10 @@ See [Install instructions](https://www.rust-lang.org/tools/install) for more inf
 
 Then you can start adding rust source files in your project **src** sub-folder.\
 Once done, **`nmk`** build will:
-* generate configuration files
-* format code
+
+- generate configuration files
+- fetch dependencies
+- format code
+- ...
 
 See [features](features.md) for more information.
