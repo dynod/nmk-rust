@@ -23,3 +23,9 @@ class TestRustPluginFiles(TestRustPlugin):
         prj = self.prepare_rust_project()
         self.nmk(prj, extra_args=["rust.fmtcfg"])
         assert (self.test_folder / ".rustfmt.toml").is_file()
+
+    def test_gitignore(self):
+        prj = self.prepare_rust_project()
+        self.nmk(prj, extra_args=["git.ignore"])
+        assert (self.test_folder / ".gitignore").is_file()
+        assert "Cargo.lock" in (self.test_folder / ".gitignore").read_text()

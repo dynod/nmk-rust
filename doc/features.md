@@ -2,9 +2,13 @@
 
 Once [enabled](usage.md) in an **`nmk`** project, the **`nmk-rust`** plugin provides the following features.
 
+---
+
 ## Check for cargo install
 
 The **`nmk-rust`** plugin contributes instructions so that the [**sys.deps**](https://nmk-base.readthedocs.io/en/stable/tasks.html#sys-deps-check-for-system-dependencies) task checks and tells how to install [**cargo**](https://doc.rust-lang.org/cargo/).
+
+---
 
 ## VSCode support
 
@@ -13,8 +17,11 @@ If the [nmk-vscode](https://nmk-vscode.readthedocs.io) plugin is also enabled in
 ### VSCode extensions
 
 Following extensions are [recommended](https://nmk-vscode.readthedocs.io/en/stable/extend.html#extensions) for rust development:
-* [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) -- generic rust support
-* [Even Better TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml) -- toml files support
+
+- [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) -- generic rust support
+- [Even Better TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml) -- toml files support
+
+---
 
 ## Files generation
 
@@ -26,7 +33,7 @@ The **`cargo`** [configuration file](https://doc.rust-lang.org/cargo/reference/c
 
 In addition to {ref}`files<rustConfigFileFragments>` and {ref}`items<rustConfigFileItems>` that can be contributed by the project, **`nmk-rust`** generates the following items by default:
 
-* [**build.target-dir**](https://doc.rust-lang.org/cargo/reference/config.html#buildtarget-dir): set to **{ref}`${rustTargetFolder}<rustTargetFolder>`**\
+- [**build.target-dir**](https://doc.rust-lang.org/cargo/reference/config.html#buildtarget-dir): set to **{ref}`${rustTargetFolder}<rustTargetFolder>`**\
   (by convention all **`nmk`** projects should generate their files in [**${outputDir}**](https://nmk-base.readthedocs.io/en/stable/config.html#outputdir-output-base-directory))
 
 ### Manifest file
@@ -35,9 +42,12 @@ The **`cargo`** [manifest file](https://doc.rust-lang.org/cargo/reference/manife
 
 In addition to {ref}`files<rustManifestFileFragments>` and {ref}`items<rustManifestFileItems>` that can be contributed by the project, **`nmk-rust`** generates the following items by default:
 
-* [**package.name**](https://doc.rust-lang.org/cargo/reference/manifest.html#the-name-field): set to **{ref}`${rustPackage}<rustPackage>`**
-* [**package.edition**](https://doc.rust-lang.org/cargo/reference/manifest.html#the-edition-field): set to **{ref}`${rustEdition}<rustEdition>`**
-* [**package.authors**](https://doc.rust-lang.org/cargo/reference/manifest.html#the-authors-field): set to ["[**${projectAuthor}**](https://nmk-base.readthedocs.io/en/stable/config.html#projectauthor-project-author)"]
+- [**package.name**](https://doc.rust-lang.org/cargo/reference/manifest.html#the-name-field): set to **{ref}`${rustPackage}<rustPackage>`**
+- [**package.edition**](https://doc.rust-lang.org/cargo/reference/manifest.html#the-edition-field): set to **{ref}`${rustEdition}<rustEdition>`**
+- [**package.authors**](https://doc.rust-lang.org/cargo/reference/manifest.html#the-authors-field): set to ["[**${projectAuthor}**](https://nmk-base.readthedocs.io/en/stable/config.html#projectauthor-project-author)"]
+- [**dependencies**](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#specifying-dependencies-from-cratesio): generated from **{ref}`${rustDependencies}<rustDependencies>`**
+- [**dev-dependencies**](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#development-dependencies): generated from **{ref}`${rustDevDependencies}<rustDevDependencies>`**
+- [**build-dependencies**](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#build-dependencies): generated from **{ref}`${rustBuildDependencies}<rustBuildDependencies>`**
 
 ### Rustfmt configuration file
 
@@ -45,8 +55,24 @@ The **`rustfmt`** [configuration file](https://rust-lang.github.io/rustfmt/) is 
 
 In addition to {ref}`files<rustFormatFileFragments>` and {ref}`items<rustFormatFileItems>` that can be contributed by the project, **`nmk-rust`** generates the following items by default:
 
-* [**max_width**](https://rust-lang.github.io/rustfmt/?version=v1.6.0&search=#max_width): set to **{ref}`${rustLineLength}<rustLineLength>`**\
+- [**max_width**](https://rust-lang.github.io/rustfmt/?version=v1.6.0&search=#max_width): set to **{ref}`${rustLineLength}<rustLineLength>`**\
   (by convention all **`nmk`** projects source code files should allow 160 characters wide lines)
+
+---
+
+## Ignored lockfile
+
+The default behavior is that **Cargo.lock** file is added to **.gitignore** file (i.e. not kept under source control) -- see **{ref}`${rustIgnoredLockfile}<rustIgnoredLockfile>`**.
+
+This goes a bit against the Rust default [reproducible builds](https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html#ensuring-reproducible-builds) principle, but complies with **`nmk`** projects shared behavior to always grab latest versions when building the project from scratch (in particular in CI environnement).
+
+---
+
+## Dependencies fetching
+
+As part of the project [**`setup`**](https://nmk-base.readthedocs.io/en/stable/tasks.html#setup-task), **`nmk-rust`** will call **`cargo fetch`** command to fetch project dependencies (this is handled by the **{ref}`rust.fetch<rust.fetch>`** task).
+
+---
 
 ## Code format
 
