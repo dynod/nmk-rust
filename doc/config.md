@@ -110,6 +110,10 @@ This is the [rust edition](https://doc.rust-lang.org/edition-guide/) to insert w
 
 ---
 
+## Dependencies
+
+---
+
 (rustDependencies)=
 
 ### **`rustDependencies`** -- Rust package dependencies
@@ -118,11 +122,31 @@ This is the [rust edition](https://doc.rust-lang.org/edition-guide/) to insert w
 | ------------- | ------------- |
 | dict[str,str] | {}            |
 
-This is the map of current package dependencies versions (indexed by name) to insert in the [dependencies](https://doc.rust-lang.org/cargo/guide/dependencies.html) section when generating **{ref}`${rustManifestFile}<rustManifestFile>`** manifest file.
+This is the map of current package operational dependencies versions (indexed by name) to insert in the [dependencies](https://doc.rust-lang.org/cargo/guide/dependencies.html) section when generating **{ref}`${rustManifestFile}<rustManifestFile>`** manifest file.
 
 ---
 
-## Dependencies
+(rustDevDependencies)=
+
+### **`rustDevDependencies`** -- Rust package development dependencies
+
+| Type          | Default value |
+| ------------- | ------------- |
+| dict[str,str] | {}            |
+
+This is the map of current package development dependencies (used by tools and tests) versions to insert in the [dev-dependencies](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#development-dependencies) section when generating **{ref}`${rustManifestFile}<rustManifestFile>`** manifest file.
+
+---
+
+(rustBuildDependencies)=
+
+### **`rustBuildDependencies`** -- Rust package build dependencies
+
+| Type          | Default value |
+| ------------- | ------------- |
+| dict[str,str] | {}            |
+
+This is the map of current package build dependencies (used by build scripts) versions to insert in the [build-dependencies](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#build-dependencies) section when generating **{ref}`${rustManifestFile}<rustManifestFile>`** manifest file.
 
 ---
 
