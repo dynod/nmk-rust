@@ -25,8 +25,14 @@ config:
   # Extra args for cargo fetch command
   rustFetchExtraArgs: []
 
-  # Package dependencies
+  # Package dependencies (operational ones)
   rustDependencies: {}
+
+  # Package development dependencies (tools and tests)
+  rustDevDependencies: {}
+
+  # Package build dependencies (build scripts)
+  rustBuildDependencies: {}
 
 tasks:
   rust.config.dir:

@@ -6,3 +6,8 @@ authors = ["{{ projectAuthor }}"]
 {% if rustDependencies %}[dependencies]{% for dep_name in rustDependencies|sort %}
 {{dep_name}} = "{{ rustDependencies[dep_name] }}"{% endfor %}{% endif %}
 
+{% if rustDevDependencies %}[dev-dependencies]{% for dep_name in rustDevDependencies|sort %}
+{{dep_name}} = "{{ rustDevDependencies[dep_name] }}"{% endfor %}{% endif %}
+
+{% if rustBuildDependencies %}[build-dependencies]{% for dep_name in rustBuildDependencies|sort %}
+{{dep_name}} = "{{ rustBuildDependencies[dep_name] }}"{% endfor %}{% endif %}

@@ -19,7 +19,9 @@ The rust package handled by an **`nmk-rust`** project can be configured using th
 
 - **{ref}`${rustPackage}<rustPackage>`**: rust package name
 - **{ref}`${rustEdition}<rustEdition>`**: rust edition to be used in generated manifest file
-- **{ref}`${rustDependencies}<rustDependencies>`**: rust package dependencies (names and versions)
+- **{ref}`${rustDependencies}<rustDependencies>`**: rust package operational dependencies (names and versions)
+- **{ref}`${rustDevDependencies}<rustDevDependencies>`**: rust package development dependencies (names and versions)
+- **{ref}`${rustBuildDependencies}<rustBuildDependencies>`**: rust package build dependencies (names and versions)
 
 ## Code format
 
