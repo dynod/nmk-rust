@@ -367,3 +367,31 @@ Stamp file updated each time code format task is executed (for incremental build
 | list[str] | ["-v"]        |
 
 List of **`cargo fmt`** command extra arguments when formatting code.
+
+---
+
+## Code build
+
+---
+
+(rustBuildStampFile)=
+
+### **`rustBuildStampFile`** -- Code build stamp file
+
+| Type | Default value                                                                                                    |
+| ---- | ---------------------------------------------------------------------------------------------------------------- |
+| str  | [${outputDir}](https://nmk-base.readthedocs.io/en/stable/config.html#outputdir-output-base-directory)/.rustbuild |
+
+Stamp file updated each time code compilation task is executed (for incremental build).
+
+---
+
+(rustBuildExtraArgs)=
+
+### **`rustBuildExtraArgs`** -- `build` extra command line args
+
+| Type      | Default value |
+| --------- | ------------- |
+| list[str] | []            |
+
+List of **`build`** command extra arguments when compiling code.

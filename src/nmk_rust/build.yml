@@ -1,0 +1,31 @@
+config:
+  # Build stamp file
+  rustBuildStampFile: ${outputDir}/.rustbuild
+
+  # Extra args for cargo build command
+  rustBuildExtraArgs: []
+
+tasks:
+  # Compile rust code
+  rust.build:
+    description: Compile rust code
+    emoji: ":crab:.:hammer:"
+    input:
+      - ${rustManifestFile}
+      - ${rustConfigFile}
+      - ${rustSrcFiles}
+    output:
+      - ${rustBuildStampFile}
+    appendToDeps: build.compile
+    deps:
+      - rust.manifest
+      - rust.config
+      - out
+    if: ${rustSrcFiles} # Only if rust source files are found
+    builder: nmk_base.common.ProcessBuilder
+    params:
+      cmd:
+        - cargo
+        - build
+        - ${rustBuildExtraArgs}
+      verbose: true

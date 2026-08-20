@@ -16,8 +16,12 @@ partition "setup" {
     :🦀.📥      rust.fetch;
 }
 
-partition "build (build.preprocess)" {
-    :🦀.💄      rust.format;
+partition "build" {
+    partition "build.preprocess" {
+        :🦀.💄      rust.format;
+    }
+    partition "build.compile" {
+        :🦀.🔨      rust.build;
+    }
 }
-
 @enduml
