@@ -1,9 +1,10 @@
 # Rust plugin definitions
 refs:
   - pip://nmk-base!plugin.yml
-  - files.yml   # Folders and files
-  - cargo.yml   # Cargo files generation
-  - format.yml  # Code format handling
+  - files.yml # Folders and files
+  - cargo.yml # Cargo files generation
+  - format.yml # Code format handling
+  - build.yml # Build handling
 
 config:
   # Plugin version

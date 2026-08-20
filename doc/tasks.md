@@ -129,3 +129,30 @@ The builder is called with the following parameters mapping:
 | Name | Value                                                                    |
 | ---- | ------------------------------------------------------------------------ |
 | cmd  | ["cargo", "fmt", **{ref}`${rustFormatExtraArgs}<rustFormatExtraArgs>`**] |
+
+---
+
+## Compilation build tasks
+
+All tasks in this chapter are dependencies of the base [**`build.compile`**](https://nmk-base.readthedocs.io/en/stable/tasks.html#build-compile-task) task.
+
+---
+
+(rust.build)=
+
+### 🦀.🔨 **`rust.build`** -- Compile rust code files
+
+This task calls the **`cargo build`** command to compile rust code files, and generate binary crate(s) executable(s).
+
+| Property | Value/description                                                                                                                             |
+| -------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| builder  | [nmk_base.common.ProcessBuilder](https://nmk-base.readthedocs.io/en/stable/autoapi/nmk_base/common/index.html#nmk_base.common.ProcessBuilder) |
+| input    | {ref}`${rustManifestFile}<rustManifestFile>` + {ref}`${rustConfigFile}<rustConfigFile>` + {ref}`${rustSrcFiles}<rustSrcFiles>` files          |
+| output   | {ref}`${rustBuildStampFile}<rustBuildStampFile>` file                                                                                         |
+| if       | {ref}`${rustSrcFiles}<rustSrcFiles>` are found                                                                                                |
+
+The builder is called with the following parameters mapping:
+
+| Name | Value                                                                    |
+| ---- | ------------------------------------------------------------------------ |
+| cmd  | ["cargo", "build", **{ref}`${rustBuildExtraArgs}<rustBuildExtraArgs>`**] |

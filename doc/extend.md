@@ -32,3 +32,15 @@ To fine-tune code format of rust source files, an **`nmk-rust`** project can be 
 - **{ref}`${rustFormatFileFragments}<rustFormatFileFragments>`**: additional rustfmt config file fragments
 - **{ref}`${rustFormatFileItems}<rustFormatFileItems>`**: additional rustfmt config items
 - **{ref}`${rustFormatExtraArgs}<rustFormatExtraArgs>`**: extra arguments for **`cargo fmt`** command
+
+## Dependencies fetching
+
+To fine-tune rust package dependencies fetching, an **`nmk-rust`** project can be configured using the following items:
+
+- **{ref}`${rustFetchExtraArgs}<rustFetchExtraArgs>`**: extra arguments for **`cargo fetch`** command
+
+## Compilation
+
+To fine-tune rust code compilation, an **`nmk-rust`** project can be configured using the following items:
+
+- **{ref}`${rustBuildExtraArgs}<rustBuildExtraArgs>`**: extra arguments for **`cargo build`** command

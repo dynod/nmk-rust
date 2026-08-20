@@ -77,8 +77,14 @@ As part of the project [**`setup`**](https://nmk-base.readthedocs.io/en/stable/t
 
 ## Code format
 
-As part of the project [**`build`**](https://nmk-base.readthedocs.io/en/stable/tasks.html#build-task), **`nmk-rust`** will call **`cargo fmt`** command to format rust source code (this is handled by the **{ref}`rust.format<rust.format>`** task).
+As part of the project [**`build.preprocess`**](https://nmk-base.readthedocs.io/en/stable/tasks.html#build-preprocess-task), **`nmk-rust`** will call **`cargo fmt`** command to format rust source code (this is handled by the **{ref}`rust.format<rust.format>`** task).
 
 If all project developers use VSCode IDE, this task shouldn't do anything since the code is already formatted by the [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) extension.
 
 However, this allows to make sure that the project code is always correctly formatted. Particularly in CI, if some code is committed without the correct format, this will cause the [**`git.dirty`**](https://nmk-base.readthedocs.io/en/stable/tasks.html#git-dirty-check-for-dirty-project-folder) task to fail the build.
+
+---
+
+## Code build
+
+As part of the project [**`build.compile`**](https://nmk-base.readthedocs.io/en/stable/tasks.html#build-compile-task), **`nmk-rust`** will call **`cargo build`** command to compile rust source code (this is handled by the **{ref}`rust.build<rust.build>`** task).
