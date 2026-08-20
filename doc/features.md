@@ -43,6 +43,7 @@ The **`cargo`** [manifest file](https://doc.rust-lang.org/cargo/reference/manife
 In addition to {ref}`files<rustManifestFileFragments>` and {ref}`items<rustManifestFileItems>` that can be contributed by the project, **`nmk-rust`** generates the following items by default:
 
 - [**package.name**](https://doc.rust-lang.org/cargo/reference/manifest.html#the-name-field): set to **{ref}`${rustPackage}<rustPackage>`**
+- [**package.version**](https://doc.rust-lang.org/cargo/reference/manifest.html#the-version-field): set to **{ref}`${rustVersion}<rustVersion>`**
 - [**package.edition**](https://doc.rust-lang.org/cargo/reference/manifest.html#the-edition-field): set to **{ref}`${rustEdition}<rustEdition>`**
 - [**package.authors**](https://doc.rust-lang.org/cargo/reference/manifest.html#the-authors-field): set to ["[**${projectAuthor}**](https://nmk-base.readthedocs.io/en/stable/config.html#projectauthor-project-author)"]
 - [**dependencies**](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#specifying-dependencies-from-cratesio): generated from **{ref}`${rustDependencies}<rustDependencies>`**
