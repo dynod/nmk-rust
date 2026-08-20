@@ -18,6 +18,7 @@ Following config items may be extended for that purpose:
 The rust package handled by an **`nmk-rust`** project can be configured using the following items:
 
 - **{ref}`${rustPackage}<rustPackage>`**: rust package name
+- **{ref}`${rustVersion}<rustVersion>`**: rust package version (to override automated next version guess from last git tag)
 - **{ref}`${rustEdition}<rustEdition>`**: rust edition to be used in generated manifest file
 - **{ref}`${rustDependencies}<rustDependencies>`**: rust package operational dependencies (names and versions)
 - **{ref}`${rustDevDependencies}<rustDevDependencies>`**: rust package development dependencies (names and versions)

@@ -42,6 +42,16 @@ config:
   gitIgnoredFiles:
     - ${rustIgnoredLockfile}
 
+  # Rust version increment from last found tagged version
+  rustVersionIncrement: 0.1.0
+
+  # Rust package version
+  rustVersion:
+    __resolver__: nmk_rust.resolvers.RustVersionResolver
+    params:
+      increment: ${rustVersionIncrement}
+      base_version: ${gitVersion}
+
 tasks:
   rust.config.dir:
     description: Create cargo config folder
